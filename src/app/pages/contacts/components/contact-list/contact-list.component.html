@@ -1,0 +1,44 @@
+<div *ngIf="contactList$ | async as contactList else loadingList">
+    <ng-container *ngIf="contactList.length === 0"
+                  [ngTemplateOutlet]="noResult">
+    </ng-container>
+    <table *ngIf="contactList.length > 0">
+        <tr>
+            <th (click)="sortName()">
+                Name
+                <i class="fa"
+                   [ngClass]="{ 'fa-arrow-up': sortRule === 'asc', 'fa-arrow-down': sortRule === 'desc' }">
+                </i>
+            </th>
+            <th>Surname</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let person of contactList"
+            (click)="viewPerson(person)"
+            [ngClass]="{ 'selected-contact': selectedContact?.id === person.id }">
+            <td>
+                <i class="fa"
+                [ngClass]="{ 'fa-eye': person.active, 'fa-eye-slash': !person.active }">{{ person.name }}</i>
+            </td>
+            <td>{{ person.surname }}</td>
+            <td>{{ person.city }}</td>
+            <td>{{ person.email }}</td>
+            <td>{{ person.phone }}</td>
+            <td>
+                <i class="fa fa-pencil"></i>
+                <i class="fa fa-trash"></i>
+            </td>
+        </tr>
+    </table>
+</div>
+<ng-template #loadingList>
+    Loading list .....
+    <div class="loader"></div>
+</ng-template>
+
+<ng-template #noResult>
+    <div class="no-results">No results found</div>
+</ng-template>

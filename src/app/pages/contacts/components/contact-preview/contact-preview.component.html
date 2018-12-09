@@ -1,0 +1,27 @@
+<div *ngIf="selectedContact$ | async as contact"
+     class="contact-preview-wrapper">
+    <img src="../../../../../assets/userpic.jpg"
+         alt="Contact image">
+    <div class="contact-preview-info">
+        <div>
+            <span>Name:</span>
+            <span>{{ contact.name }}</span>
+        </div>
+        <div>
+            <span>Surname:</span>
+            <span>{{ contact.surname }}</span>
+        </div>
+        <div>
+            <span>City:</span>
+            <span>{{ contact.city }}</span>
+        </div>
+        <div>
+            <span>Email:</span>
+            <span>{{ contact.email }}</span>
+        </div>
+        <div>
+            <span>Phone:</span>
+            <span>{{ contact.phone }}</span>
+        </div>
+    </div>
+</div>

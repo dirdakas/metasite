@@ -1,0 +1,27 @@
+<div class="filter-wrapper">
+    <form class="filter-form" [formGroup]="filterForm" novalidate>
+        <input type="text"
+               class="form-name"
+               placeholder="Name"
+               formControlName="name" />
+        <select *ngIf="cityList$ | async as cityList"
+                class="form-city"
+                formControlName="city">
+            <option [value]="'NULL'">City</option>
+            <option *ngFor="let city of cityList"
+                    [value]="(city === 'City') ? '' : city">{{ city }}</option>
+        </select>
+        <label class="form-isActive-wrapper">
+            <input type="checkbox"
+                   class="form-isActive"
+                   formControlName="isActive" />
+            <span>Show active</span>
+        </label>
+        <button class="btn-filter"
+                type="button"
+                (click)="filterContactList()">Filter</button>
+    </form>
+    <button class="btn-add-contact"
+            type="button">
+            <i class="fa fa-plus"></i>Add new contact</button>
+</div>

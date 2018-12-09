@@ -1,0 +1,66 @@
+table
+  border-collapse: collapse
+
+  tr:not(:first-child)
+    cursor: pointer
+    &:hover
+      background: #d2d2d2
+  tr
+    &.selected-contact
+      background-color: #e4c8cd
+
+      td:nth-child(6)
+        i
+          background-color: #01b5c7
+          color: #ffffff
+          margin-right: 5px
+
+    th
+      color: #ffffff
+      padding: 10px
+
+    td
+      padding: 10px
+
+      i
+        &:before
+          margin-right: 5px
+
+    td:nth-child(5)
+      text-align: right
+
+    th:nth-child(1)
+      background: #00a4b5
+      cursor: pointer
+    
+    th:nth-child(2)
+      background: #01b5c7
+
+    th:nth-child(3)
+      background: #03c3d6
+
+    th:nth-child(4)
+      background: #0ec8da
+
+    th:nth-child(5)
+      background: #22cfe0
+
+    th:nth-child(6)
+      background: #3ad9e8
+
+.no-results
+  
+
+.loader
+  border: 16px solid #f3f3f3
+  border-radius: 50%
+  border-top: 16px solid #3498db
+  width: 60px
+  height: 60px
+  animation: spin 0.3s linear infinite
+
+  @keyframes spin
+    0%
+      transform: rotate(0deg)
+    100%
+      transform: rotate(360deg)
