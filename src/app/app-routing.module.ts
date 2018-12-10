@@ -12,10 +12,6 @@ const routes: Routes = [
     component: ContactsComponent
   },
   {
-    path: 'contacts/:id',
-    component: ContactsComponent
-  },
-  {
     path: 'notifications',
     component: ContactsComponent
   },

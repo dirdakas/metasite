@@ -1,3 +1,45 @@
-<p>
-  footer works!
-</p>
+<footer class="footer-wrapper">
+    <div class="footer-links">
+        <div class="action-link"
+             [routerLink]="['/dashboard']">Dashboard</div>
+        <div class="action-link"
+             [routerLink]="['/contacts']">Contacts</div>
+        <div class="action-link"
+             [routerLink]="['/notifications']">Notifications</div>
+        <div class="footer-copyright">
+            <i class="fa fa-copyright"> 2015 Contactify</i>
+            <span class="action-link"
+                  [routerLink]="['/about']">About</span>
+            <span class="action-link"
+                  [routerLink]="['/privacy']">Privacy</span>
+        </div>
+    </div>
+    <div class="footer-info">
+        <div class="footer-sync-info">
+            <i class="fa fa-cloud"></i>
+            <span>Last synced: 2015-06-02 14:33:10</span>
+            <div>
+                <i class="fa fa-refresh"></i>
+                <span class="action-link">Force sync</span>
+            </div>
+        </div>
+        <div class="footer-work-info">
+            <i class="fa fa-stethoscope"></i>
+            <div>
+                <span>Help desk and Resolution center available:</span>
+                <span>I-IV 8:00-18:00, V 8:00-16:45</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-settings">
+        <div class="footer-settings-wrapper">
+            <div class="action-link"
+                 [routerLink]="['/groups']">Groups</div>
+            <div class="action-link"
+                 [routerLink]="['/freaquently-contacted']">Frequently contacted</div>
+            <div class="action-link"
+                 [routerLink]="['/preferences']">Preferences</div>
+            <div class="action-link">Log out</div>
+        </div>
+    </div>
+</footer>
