@@ -1,3 +1,56 @@
-<p>
-  header works!
-</p>
+<div class="header">
+    <div class="logo">Contactify</div>
+    <nav>
+        <ul>
+            <li class="action-link"
+                [routerLink]="['/dashboard']"
+                role="presentation"
+                routerLinkActive="active">Dashboard</li>
+            <li class="action-link"
+                [routerLink]="['/contacts']"
+                role="presentation"
+                routerLinkActive="active">Contacts</li>
+            <li class="action-link"
+                [routerLink]="['/notifications']"
+                role="presentation"
+                routerLinkActive="active">Notifications</li>
+        </ul>
+    </nav>
+    <div class="header-search">
+
+    </div>
+    <div class="user-nav" (click)="isDropDownActive = !isDropDownActive">
+        <i class="fa fa-user"></i>
+        <span>Jorah Monmor</span>
+        <i class="fa"
+           [ngClass]="{ 'fa-angle-up': isDropDownActive, 'fa-angle-down': !isDropDownActive }"></i>
+    </div>
+    <ng-container *ngIf="isDropDownActive"
+                  [ngTemplateOutlet]="userNav">
+    </ng-container>
+</div>
+
+<ng-template #userNav>
+    <div class="user-nav-panel">
+        <nav>
+            <div class="triangle-up"></div>
+            <ul>
+                <li class="action-link"
+                    [routerLink]="['/groups']">
+                    <i class="fa fa-users"></i>Groups
+                </li>
+                <li class="action-link"
+                    [routerLink]="['/freaquently-contacted']">
+                    <i class="fa fa-comments-o"></i>Frequently contacted
+                </li>
+                <li class="action-link"
+                    [routerLink]="['/preferences']">
+                    <i class="fa fa-wrench"></i>Preferences
+                </li>
+                <li class="action-link">
+                    <i class="fa fa-power-off"></i>Log out
+                </li>
+            </ul>
+        </nav>
+    </div>
+</ng-template>

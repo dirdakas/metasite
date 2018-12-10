@@ -1,0 +1,96 @@
+.header
+  display: table
+  width: 100%
+  position: relative
+  background-color: #083a35
+
+  > div, > nav
+    display: inline-block
+
+  .logo
+    margin-left: 5%
+    margin-right: 5%
+    font-size: 25px
+    color: #ffffff
+
+  nav
+    ul
+      list-style: none
+      padding-left: 0
+      background-color: #01b5c7
+      border-radius: 20px
+
+      li
+        display: inline-block
+        padding: 10px 15px
+        color: #ffffff
+        text-transform: uppercase
+        cursor: pointer
+
+        &:active, &:focus
+          outline: none
+
+        &:first-of-type
+          border-radius: 20px 0 0 20px
+
+        &:last-of-type
+          border-radius: 0 20px 20px 0
+
+        &.active
+          background-color: #00a4b5
+
+        &:hover
+          background-color: #12747d
+
+  .user-nav
+    position: absolute
+    right: 15px
+    padding: 5px 10px 10px 10px
+    color: #ffffff
+    background-color: #01b5c7
+    border-radius: 0 0 10px 10px
+    cursor: pointer
+
+    .fa-user
+      &:after
+        content: ''
+        margin-right: 5px
+
+    .fa-angle-up, .fa-angle-down
+      &:before
+        margin-left: 5px
+
+  .user-nav-panel
+    position: absolute
+    top: 50px
+    right: 15px
+
+    nav
+      ul
+        border-radius: 0
+        border: 1px solid #12747d
+
+        li
+          display: block
+          border-bottom: 1px solid #083a35
+          border-radius: 0
+
+          i
+            &:after
+              content: ''
+              margin-right: 10px
+
+          &:last-of-type
+            border-bottom: none
+
+      .triangle-up
+        position: relative
+        width: 0
+        height: 0
+        display: inline
+        border-left: 15px solid #083a35
+        border-right: 15px solid #083a35
+        border-bottom: 15px solid #01b5c7
+        float: right
+        top: -14px
+        right: 15px
