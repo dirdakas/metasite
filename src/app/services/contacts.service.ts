@@ -29,7 +29,6 @@ export class ContactsService {
   selectedContact$ = this.selectedContactSource.asObservable();
 
   constructor() {
-    console.log('contacts', contacts);
     this.contactListFromFile = contacts;
     this.updateContactList(this.contactListFromFile);
     this.updateCityList();
@@ -54,7 +53,6 @@ export class ContactsService {
 
   filterContactList(byName: string, isActive: boolean, byCity: string): void {
     this.updateSelectedContact(null);
-    console.log('filter name:', byName, 'isActive', isActive, 'city', byCity);
     if (!byName && !isActive && !byCity) {
       // update from file (reset)
       this.updateContactList(this.contactListFromFile);
@@ -95,7 +93,6 @@ export class ContactsService {
           currentCityList.push(contact.city);
         }
       }
-      console.log('currentCityList', currentCityList);
       this.cityListSource.next(currentCityList);
     }
   }

@@ -17,7 +17,15 @@
         </ul>
     </nav>
     <div class="header-search">
-
+        <form class="search-form" [formGroup]="searchForm" novalidate>
+            <input type="text"
+                   class="form-search-query"
+                   placeholder="Search"
+                   formControlName="search" />
+            <button>
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
     </div>
     <div class="user-nav" (click)="isDropDownActive = !isDropDownActive">
         <i class="fa fa-user"></i>

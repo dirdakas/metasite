@@ -33,7 +33,6 @@ export class ContactListComponent implements OnInit, OnDestroy {
     } else {
       this.sortRule = 'asc';
     }
-    console.log('this.sortRule', this.sortRule);
     this.contactsService.sortContactsByName(this.sortRule);
   }
 
